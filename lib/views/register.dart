@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hali/configs/colors.dart';
+import 'package:get/get.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -28,9 +30,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Hali"),
-        backgroundColor: const Color.fromARGB(255, 67, 169, 30),
-        foregroundColor: const Color.fromARGB(255, 20, 21, 17),
+        title: Text("SSEH"),
+        backgroundColor: primaryColor,
+        foregroundColor: secondaryColor,
         centerTitle: true,
       ),
       body: Padding(
@@ -70,7 +72,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
-                  color: const Color.fromARGB(255, 67, 169, 30),
+                  color: primaryColor,
                 ),
               ),
               TextField(
@@ -87,7 +89,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
-                  color: const Color.fromARGB(255, 67, 169, 30),
+                  color: primaryColor,
                 ),
               ),
               TextField(
@@ -117,7 +119,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
-                  color: const Color.fromARGB(255, 67, 169, 30),
+                  color: primaryColor,
                 ),
               ),
               TextField(
@@ -161,7 +163,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   print("Registering ${usernameController.text}");
                   // later: call your backend here, then Navigator.pop(context)
                 },
-                color: const Color.fromARGB(255, 67, 169, 30),
+                color: primaryColor,
                 height: 50,
                 minWidth: double.infinity,
                 child: Text("Register"),
@@ -176,14 +178,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   SizedBox(width: 5),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pop(context);
+                      Get.toNamed("/");
                     },
                     child: Text(
                       "Login",
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
-                        color: const Color.fromARGB(255, 67, 169, 30),
+                        color: secondaryColor,
                       ),
                     ),
                   ),

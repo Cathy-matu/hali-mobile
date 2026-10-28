@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hali/views/register.dart';
+import 'package:get/get.dart';
+import 'package:hali/configs/colors.dart';
 
 TextEditingController usernameController = TextEditingController();
 TextEditingController passwordController = TextEditingController();
@@ -18,8 +19,8 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Hali"),
-        backgroundColor: const Color.fromARGB(255, 67, 169, 30),
+        title: Text("SSEH"),
+        backgroundColor: primaryColor,
         foregroundColor: const Color.fromARGB(255, 20, 21, 17),
         centerTitle: true,
       ),
@@ -42,7 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
-                  color: const Color.fromARGB(255, 67, 169, 30),
+                  color: primaryColor,
                 ),
               ),
               TextField(
@@ -58,7 +59,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
-                  color: const Color.fromARGB(255, 67, 169, 30),
+                  color: primaryColor,
                 ),
               ),
               TextField(
@@ -85,11 +86,13 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(height: 25),
               MaterialButton(
                 onPressed: () {
-                  print(
+                  Get.offAndToNamed("/home");
+                  Get.snackbar(
+                    "Login",
                     "The username is ${usernameController.text} and the password is ${passwordController.text}",
                   );
                 },
-                color: const Color.fromARGB(255, 67, 169, 30),
+                color: primaryColor,
                 height: 50,
                 minWidth: double.infinity,
                 child: Text("Login"),
@@ -101,19 +104,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   SizedBox(width: 5),
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const RegisterScreen(),
-                        ),
-                      );
+                      Get.toNamed("/register");
                     },
                     child: Text(
                       "Register",
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
-                        color: const Color.fromARGB(255, 67, 169, 30),
+                        color: secondaryColor,
                       ),
                     ),
                   ),
@@ -125,7 +123,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
-                      color: const Color.fromARGB(255, 67, 169, 30),
+                      color: secondaryColor,
                     ),
                   ),
                 ],

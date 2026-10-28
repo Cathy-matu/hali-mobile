@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:hali/views/login.dart';
+import 'package:get/get.dart';
+import 'package:hali/configs/routes.dart';
 
 void main() {
-  runApp(const Hali());
+  runApp(const SSEH());
 }
 
-class Hali extends StatelessWidget {
-  const Hali({super.key});
+class SSEH extends StatelessWidget {
+  const SSEH({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: LoginScreen());
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      initialRoute: "/",
+      getPages: myRoutes,
+    );
   }
 }
