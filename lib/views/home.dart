@@ -42,3 +42,5 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
+//To do, add the logic for  domeColor: homeController.selectedIndex.value== 0 ? colors.white : secondaryColor amd the same to molten tabs IN the colIcons( Icon( Icons.list and add homeController color))
